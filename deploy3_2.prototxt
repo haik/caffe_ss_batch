@@ -1,0 +1,23 @@
+input:"relu1_1"
+input_dim:1
+input_dim:20
+input_dim:24
+input_dim:24
+
+input:"relu1_2"
+input_dim:1
+input_dim:20
+input_dim:24
+input_dim:24
+
+layer {
+  name: "pool1"
+  type: "Python"
+  bottom: "relu1_1"
+  bottom: "relu1_2"
+  top: "pool1_2"
+  python_param {
+    module: "layer"
+    layer: "MaxBLayer"
+  }
+}

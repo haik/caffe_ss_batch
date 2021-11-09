@@ -1,0 +1,23 @@
+input:"fc1_1"
+input_dim:1
+input_dim:500
+input_dim: 1
+input_dim: 1
+
+input:"fc1_2"
+input_dim:1
+input_dim:500
+input_dim: 1
+input_dim: 1
+
+layer {
+  name: "relu3"
+  type: "Python"
+  bottom: "fc1_1"
+  bottom: "fc1_2"
+  top: "relu3_2"
+  python_param {
+    module: "layer"
+    layer: "ReluDLayer"
+  }
+}

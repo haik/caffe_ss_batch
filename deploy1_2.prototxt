@@ -1,0 +1,18 @@
+input:"data_2"
+input_dim:1
+input_dim:1
+input_dim:28
+input_dim:28
+layer {
+  name: "conv1"
+  type: "Convolution"
+  bottom: "data_2"
+  top: "conv1_2"
+  convolution_param {
+    num_output: 20
+    kernel_size: 5
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}

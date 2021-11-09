@@ -1,0 +1,18 @@
+input:"pool1_2"
+input_dim:1
+input_dim:20
+input_dim:12
+input_dim:12
+layer {
+  name: "conv2"
+  type: "Convolution"
+  bottom: "pool1_2"
+  top: "conv2_2"
+  convolution_param {
+    num_output: 50
+    kernel_size: 5
+    weight_filler {
+      type: "xavier"
+    }
+  }
+}
